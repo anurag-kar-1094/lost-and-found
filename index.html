@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Lost & Found System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>🔍 AI-Based Lost & Found System</h1>
+        <p>City-wise intelligent matching</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>📌 Report Item</h2>
+
+            <form id="itemForm">
+
+                <label>Lost/Found?</label>
+                <select id="itemStatus" required>
+                    <option value="">Select</option>
+                    <option value="Lost">Lost</option>
+                    <option value="Found">Found</option>
+                </select>
+
+                <label>Item Type</label>
+                <select id="itemType" required>
+                    <option value="">Select Item</option>
+                    <option value="mobile">Mobile Phone</option>
+                    <option value="wallet">Wallet</option>
+                    <option value="idcard">ID Card</option>
+                    <option value="bag">Bag</option>
+                </select>
+
+                <div id="dynamicFields"></div>
+
+                <!-- IMAGE PREVIEW -->
+                <label>Upload Item Image</label>
+                <input type="file" id="imageInput" accept="image/*">
+                <img id="previewImage" class="preview" />
+
+                <h3 class="section-title">📍 Location Details</h3>
+
+                <label>City</label>
+                <select id="city" required>
+                    <option value="">Select City</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Bangalore</option>
+                    <option>Hyderabad</option>
+                    <option>Chennai</option>
+                </select>
+
+                <label>Area / Landmark</label>
+                <input type="text" id="area" required>
+
+                <!-- <div id="radiusField">
+                <label>Search Radius (km)</label>
+                <select>
+                    <option>1 km</option>
+                    <option>3 km</option>
+                    <option>5 km</option>
+                    <option>10 km</option>
+                </select>
+            </div> -->
+
+                <label>Date</label>
+                <input type="date" id="date" required>
+
+                <label>Time</label>
+                <input type="time" id="time" required>
+                <label>Contact Number</label>
+                <input type="tel" id="contactNumber" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                <label class="checkbox">
+                    <input type="checkbox" required>
+                    I confirm this is a genuine report
+                </label>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="card" id="dispFound">
+            <h2>Items Reported / Found Till Now!!!</h2>
+
+            <!-- Filters -->
+            <div style="margin-bottom: 10px;">
+                <label>Filter by City:</label>
+                <select id="filterFoundCity">
+                    <option value="">All Cities</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Bangalore</option>
+                    <option>Hyderabad</option>
+                    <option>Chennai</option>
+                </select>
+
+                <label style="margin-left: 10px;">Search Item:</label>
+                <input type="text" id="filterFoundItem" placeholder="mobile, wallet, bag">
+            </div>
+
+            <p id="noFoundText">No found items yet.</p>
+        </div>
+
+
+        <div class="card" id="dispMatches">
+            <h2>🔔 Possible Matches</h2>
+            <div style="margin-bottom: 10px;">
+                <label>Filter by City:</label>
+                <select id="filterCity">
+                    <option value="">All Cities</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Bangalore</option>
+                    <option>Hyderabad</option>
+                    <option>Chennai</option>
+                </select>
+
+                <label style="margin-left: 10px;">Search Item:</label>
+                <input type="text" id="filterItem" placeholder="mobile, wallet, bag">
+            </div>
+            <p id="noMatchText">No matches found yet.</p>
+        </div>
+
+        <!-- <div class="card">
+        <h2>🤖 AI Match Result</h2>
+
+        
+        <p>Match Confidence</p>
+        <div class="progress">
+            <div id="confidenceBar"></div>
+        </div>
+
+        
+        <p id="reliability" class="reliability"></p>
+
+        
+        <div class="why-box">
+            <h4>Why this match?</h4>
+            <ul id="whyList"></ul>
+        </div>
+
+        
+        <button id="contactBtn">🔒 Request Contact</button>
+
+        
+        <div class="recent">
+            <h4>Recent Found Items Nearby</h4>
+            <p>📱 Mobile – 2 km away</p>
+            <p>🎒 Bag – 3 km away</p>
+        </div>
+    </div> -->
+    </div>
+
+    <footer>
+        <p>© 2025 Hackathon Project</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
