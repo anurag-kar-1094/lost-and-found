@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Lost & Found System</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 🔴 FIX CHECKBOX ALIGNMENT */
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 12px 0 18px 0;
+            width: 100%;
+        }
+
+        /* OVERRIDE global input styles */
+        .checkbox-row input[type="checkbox"] {
+            width: auto !important;
+            /* 🔥 THIS FIXES IT */
+            padding: 0 !important;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        /* Label alignment */
+        .checkbox-row label {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="padding: 10px;">
+        <h1>Report Lost Item</h1>
+    </header>
+
+    <div class="container" style="padding: 0px;">
+        <div class="card" style="min-width: 40vw;">
+            <h2>📌 Report Item</h2>
+
+            <form id="itemForm">
+
+                <label>Item Type</label>
+                <select id="itemType" required>
+                    <option value="">Select Item</option>
+                    <option value="mobile">Mobile Phone</option>
+                    <option value="wallet">Wallet</option>
+                    <option value="idcard">ID Card</option>
+                    <option value="bag">Bag</option>
+                </select>
+
+                <!-- <h3 class="section-title">📍 Location Details</h3> -->
+
+                <label>City</label>
+                <select id="city" required>
+                    <option value="">Select City</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Bangalore</option>
+                    <option>Hyderabad</option>
+                    <option>Chennai</option>
+                </select>
+
+                <label>Area / Landmark</label>
+                <input type="text" id="area" required>
+
+                <label>Date</label>
+                <input type="date" id="date" required>
+
+                <label>Time</label>
+                <input type="time" id="time" required>
+                <div class="checkbox-row">
+                    <input type="checkbox" id="confirmCheck" required>
+                    <label for="confirmCheck">I confirm this is a genuine report</label>
+                </div>
+
+
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <footer style="position: absolute; bottom: 2px; left: 42vw;">
+        <p>© 2025 Hackathon Project</p>
+    </footer>
+    <script type="module" src="lost.js"></script>
+</body>
+
+</html>
