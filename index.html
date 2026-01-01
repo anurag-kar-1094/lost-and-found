@@ -8,121 +8,39 @@
 </head>
 
 <body>
-    <header>
+    <header class="top-bar">
+        <span id="userWelcome" class="welcome-text" style="display:none;"></span>
+        <button id="loginBtn" class="login-btn">Login</button>
+        <button id="logoutBtn" class="logout-btn-small" style="display:none;">Logout</button>
         <h1>🔍 AI-Based Lost & Found System</h1>
         <p>City-wise intelligent matching</p>
     </header>
+    <div class="cta-bar">
+        <div class="cta-content">
+            <h2>Did you lose or find anything?</h2>
+
+            <div class="cta-buttons">
+                <button id="goLost" class="lost-btn">Report Lost Item</button>
+                <button id="goFound" class="found-btn">Report Found Item</button>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
-        <div class="card">
-            <h2>📌 Report Item</h2>
 
-            <form id="itemForm">
-
-                <label>Lost/Found?</label>
-                <select id="itemStatus" required>
-                    <option value="">Select</option>
-                    <option value="Lost">Lost</option>
-                    <option value="Found">Found</option>
-                </select>
-
-                <label>Item Type</label>
-                <select id="itemType" required>
-                    <option value="">Select Item</option>
-                    <option value="mobile">Mobile Phone</option>
-                    <option value="wallet">Wallet</option>
-                    <option value="idcard">ID Card</option>
-                    <option value="bag">Bag</option>
-                </select>
-
-                <div id="dynamicFields"></div>
-
-                <!-- IMAGE PREVIEW -->
-                <label>Upload Item Image</label>
-                <input type="file" id="imageInput" accept="image/*">
-                <img id="previewImage" class="preview" />
-
-                <h3 class="section-title">📍 Location Details</h3>
-
-                <label>City</label>
-                <select id="city" required>
-                    <option value="">Select City</option>
-                    <option>Delhi</option>
-                    <option>Mumbai</option>
-                    <option>Bangalore</option>
-                    <option>Hyderabad</option>
-                    <option>Chennai</option>
-                </select>
-
-                <label>Area / Landmark</label>
-                <input type="text" id="area" required>
-
-                <!-- <div id="radiusField">
-                <label>Search Radius (km)</label>
-                <select>
-                    <option>1 km</option>
-                    <option>3 km</option>
-                    <option>5 km</option>
-                    <option>10 km</option>
-                </select>
-            </div> -->
-
-                <label>Date</label>
-                <input type="date" id="date" required>
-
-                <label>Time</label>
-                <input type="time" id="time" required>
-                <label>Contact Number</label>
-                <input type="tel" id="contactNumber" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
-                <label class="checkbox">
-                    <input type="checkbox" required>
-                    I confirm this is a genuine report
-                </label>
-
-                <button type="submit">Submit</button>
-            </form>
+        <div class="card zz" id="myLostItems">
+            <h2>📌 My Reported Lost Items</h2>
+            <p id="noMyLostText">You have not reported any lost items.</p>
         </div>
 
-        <div class="card" id="dispFound">
-            <h2>Items Reported / Found Till Now!!!</h2>
-
-            <!-- Filters -->
-            <div style="margin-bottom: 10px;">
-                <label>Filter by City:</label>
-                <select id="filterFoundCity">
-                    <option value="">All Cities</option>
-                    <option>Delhi</option>
-                    <option>Mumbai</option>
-                    <option>Bangalore</option>
-                    <option>Hyderabad</option>
-                    <option>Chennai</option>
-                </select>
-
-                <label style="margin-left: 10px;">Search Item:</label>
-                <input type="text" id="filterFoundItem" placeholder="mobile, wallet, bag">
-            </div>
-
-            <p id="noFoundText">No found items yet.</p>
-        </div>
-
-
-        <div class="card" id="dispMatches">
+        <div class="card zz" id="dispMatches">
             <h2>🔔 Possible Matches</h2>
-            <div style="margin-bottom: 10px;">
-                <label>Filter by City:</label>
-                <select id="filterCity">
-                    <option value="">All Cities</option>
-                    <option>Delhi</option>
-                    <option>Mumbai</option>
-                    <option>Bangalore</option>
-                    <option>Hyderabad</option>
-                    <option>Chennai</option>
-                </select>
-
-                <label style="margin-left: 10px;">Search Item:</label>
-                <input type="text" id="filterItem" placeholder="mobile, wallet, bag">
-            </div>
             <p id="noMatchText">No matches found yet.</p>
+        </div>
+        <div class="card" id="recoveredCard">
+            <h2>🎉 Items Recovered Through Our Platform</h2>
+            <div id="dispRecovered"></div>
+            <p id="noRecoveredText">No items recovered yet.</p>
         </div>
 
         <!-- <div class="card">
@@ -155,9 +73,22 @@
     </div> -->
     </div>
 
-    <footer>
+    <footer style="position: absolute; bottom: 10px; left: 42vw;">
         <p>© 2025 Hackathon Project</p>
     </footer>
+    <!-- Developer Info Floating Widget -->
+    <div class="dev-widget">
+        <div class="dev-label">👨‍💻 Developer</div>
+
+        <div class="dev-card">
+            <p class="dev-title">DESIGN & DEVELOPED BY</p>
+            <p class="dev-name green">Anurag Kar - Project Leader</p>
+            <p class="dev-yr">4th Semester BTech CSE, 2026</p>
+            <hr>
+            <p class="dev-name green">Rohit Singh - Front End, Landing Page</p>
+            <p class="dev-yr">4th Semester BTech CSE, 2026</p>
+        </div>
+    </div>
 
     <script type="module" src="app.js"></script>
 </body>
