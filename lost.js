@@ -70,13 +70,9 @@ form.addEventListener("submit", async (e) => {
     const msg = document.getElementById("lostStatusMsg");
 
     if (hasMatch) {
-        msg.style.color = "green";
-        msg.textContent =
-            "✅ Possible match found! Please check the Possible Matches section below.";
+        alert("✅ Possible match found! Check Possible Matches on home page.");
     } else {
-        msg.style.color = "orange";
-        msg.textContent =
-            "⏳ Item not found yet. Please come back later and check the Possible Matches board.";
+        alert("⏳ Item not found yet. Please check again later.");
     }
     form.reset();
     window.location.href = "index.html";
@@ -101,3 +97,4 @@ async function checkImmediateMatchForLost(lostData) {
 
   return matchFound;
 }
+
