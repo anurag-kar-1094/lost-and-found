@@ -80,4 +80,24 @@ form.addEventListener("submit", async (e) => {
     }
     form.reset();
     window.location.href = "index.html";
+
 });
+async function checkImmediateMatchForLost(lostData) {
+  const snapshot = await getDocs(collection(db, "found_items"));
+
+  let matchFound = false;
+
+  snapshot.forEach(docSnap => {
+    const found = docSnap.data();
+
+    if (
+      found.itemType === lostData.itemType &&
+      found.location.city === lostData.location.city &&
+      found.location.area === lostData.location.area
+    ) {
+      matchFound = true;
+    }
+  });
+
+  return matchFound;
+}
