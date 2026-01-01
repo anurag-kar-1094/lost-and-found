@@ -323,3 +323,4 @@ async function displayRecoveredItems() {
   noText.style.display = hasData ? "none" : "block";
 }
 displayRecoveredItems();
+displayMyLostItems();
