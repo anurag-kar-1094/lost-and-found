@@ -10,7 +10,9 @@ import {
     getAuth,
     onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
+import {
+    getDocs,
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 const app = initializeApp({
     apiKey: "AIzaSyCIwHZHSgkNHN0CaxhwbggBuWZGIfYo49g",
     authDomain: "lost-and-found-92a95.firebaseapp.com",
@@ -97,4 +99,5 @@ async function checkImmediateMatchForLost(lostData) {
 
   return matchFound;
 }
+
 
